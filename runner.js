@@ -1,4 +1,5 @@
-PEG = require('../lib/peg');
-fs = require('fs');
-parser = PEG.buildParser(fs.readFileSync('scratch.pegjs').toString());
-console.log(parser.parse('aaaa[page]bbbb[bg park]cccc[se lion]ddd[bg house]eee[se person]'));
+var PEG = require('./node_modules/pegjs/lib/peg');
+var fs = require('fs');
+var parser = PEG.buildParser(fs.readFileSync('hello.pegjs').toString());
+var target = fs.readFileSync('target.txt').toString();
+console.log(parser.parse(target));
