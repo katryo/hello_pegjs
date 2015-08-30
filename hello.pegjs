@@ -3,8 +3,8 @@ Expr = expr:(pageBlock / seBlock / seBlockStartsWithBracket / Symbol ) _ {
   return expr;
 }
 
-pageBlock = symbol:Symbol child:(_ expr:ExprInsidePage _ {return expr})* "[page]" {
-  return symbol + child;
+pageBlock = child:(_ expr:ExprInsidePage _ {return expr})* "[page]" {
+  return child;
 }
 
 ExprInsidePage = expr:(seBlock / seBlockStartsWithBracket / Symbol ) _ {
