@@ -1,6 +1,9 @@
 [page]aa[page]
 
-www[se animal][se wolf]
+bbbbbb[se animal][se wolf]
 
-sorena[se person]aieee
-bbbb[page]cccc[page]ddd[page]eee
+sp a ce
+[page]
+
+cccc[se person]dddd
+eeeeeeee[page]ffffff[page]gggg[page]hhhh
