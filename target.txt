@@ -1,4 +1,4 @@
-[page]aa[page]
+aあa☆�[page]
 
 bbbbbb[se animal][se wolf]
 
@@ -7,3 +7,4 @@ sp a ce
 
 cccc[se person]dddd
 eeeeeeee[page]ffffff[page]gggg[page]hhhh
+a[page]
