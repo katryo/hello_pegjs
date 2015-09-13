@@ -1,5 +1,5 @@
 start = Expr+
-Expr = expr:(pageBlock / seBlock / seBlockStartsWithBracket / Symbol ) _ {
+Expr = expr:(pageBlock / Symbol ) _ {
   return expr;
 }
 
@@ -7,16 +7,8 @@ pageBlock = child:(_ expr:ExprInsidePage _ {return expr})* "[page]" {
   return child;
 }
 
-ExprInsidePage = expr:(seBlock / seBlockStartsWithBracket / Symbol ) _ {
+ExprInsidePage = expr:(seTag / Symbol ) _ {
   return expr;
-}
-
-seBlock = symbol:Symbol child:(_ expr:ExprInsidePage _ {return expr})* se:seTag {
-  return { content: symbol + child , se: se};
-}
-
-seBlockStartsWithBracket =  se:seTag {
-  return {se: se};
 }
 
 _ = (Whitespace / LineTerminator)*
@@ -26,5 +18,13 @@ LineTerminator = [\n\r\u2028\u2029]
 Symbol = $([a-zA-Z] [a-zA-Z0-9] *)
 
 seTag = "[se" _ name:Symbol "]" {
+  return { se: name };
+}
+
+bgmTag = "[bgm" _ name:Symbol "]" {
+  return name;
+}
+
+filterTag = "[filter" _ name:Symbol "]" {
   return name;
 }

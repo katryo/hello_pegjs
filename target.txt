@@ -1,4 +1,4 @@
-aa[page]
+[page]aa[page]
 
 www[se animal][se wolf]
 
