@@ -25,7 +25,7 @@ SourceCharacter
   = .
 
 SeTag = "[se" _ name:Symbol "]" {
-  return { se: name };
+  return { type: 'se', value: name };
 }
 
 BgmTag = "[bgm" _ name:Symbol "]" {
@@ -38,7 +38,7 @@ FilterTag = "[filter" _ name:Symbol "]" {
 
 StringLiteral
   = chars:Character+ {
-      return { type: "Literal", value: chars.join("") };
+      return { type: 'body', value: chars.join("") };
     }
 
 Character
@@ -47,4 +47,4 @@ Character
 String = $(.+)
 
 UnicodeLetter
-  = [a-z0-9\u0060-\uFFFF]
+  = [a-z0-9\u0060-\uFFFF] WhiteSpace*

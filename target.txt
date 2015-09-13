@@ -3,6 +3,10 @@ aあa☆�[page]
 bbbbbb[se animal][se wolf]
 
 sp a ce
+this
+is 
+space
+
 [page]
 
 cccc[se person]dddd
